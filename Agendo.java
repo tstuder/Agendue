@@ -18,7 +18,7 @@ public class Agendo{
 			
 		//The user typed something, let's figure out what to do
 		//If there was an error, or if they typed 'exit', let's exit
-			if(command==null || command[0].equals("exit")){
+			if(command==null || command[0].equals("exit") || command[0].equals("quit")){
 				System.out.println("Goodbye!");
 				return;
 			
