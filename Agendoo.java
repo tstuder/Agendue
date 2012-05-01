@@ -25,10 +25,10 @@ public class Agendoo{
 		//If the user typed '?', then show them a help screen
 			}else if(command[0].equals("?")){
 				System.out.println("The following commands are available:");
-				System.out.println(" ?         : Displays this help text");
-				System.out.println(" add <task name> : creates a task");
-				System.out.println(" del <task #> : Deletes a task");
-				System.out.println(" quit      : Exits out of program");
+				System.out.println(" ?                : Displays this help text");
+				System.out.println(" add <task name>  : creates a task");
+				System.out.println(" del <task #>     : Deletes a task");
+				System.out.println(" quit             : Exits out of program");
 				System.out.println("");
 			// Check for error, if true, return error message
 			}else if(command==null){
