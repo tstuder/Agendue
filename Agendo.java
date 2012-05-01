@@ -18,16 +18,21 @@ public class Agendo{
 			
 		//The user typed something, let's figure out what to do
 		//If there was an error, or if they typed 'exit', let's exit
-			if(command==null || command[0].equals("exit") || command[0].equals("quit")){
+			if(command[0].equals("exit") || command[0].equals("quit")){
 				System.out.println("Goodbye!");
 				return;
 			
 		//If the user typed '?', then show them a help screen
-			}else if(command[0].equals("?")){
+			}else if(command[0].equals("?"){
 				System.out.println("The following commands are available:");
 				System.out.println(" ?         : Displays this help text");
+				System.out.println(" add <task name> : creates a task");
+				System.out.println(" del <task #> : Deletes a task");
+				System.out.println(" quit      : Exits out of program");
 				System.out.println("");
 			
+			}else if(command==null){
+				System.out.println("Your request was unable to be completed. Please press ? for help")
 		//If the user typed 'list', then print a list of tasks
 			}else if(command[0].equals("list")){
 				String[] l=tasks.listTasks();
