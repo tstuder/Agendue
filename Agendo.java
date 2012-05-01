@@ -56,6 +56,8 @@ public class Agendo{
 				}catch(Exception e){
 					System.out.println("No such task");
 				}
+			}else
+				System.out.println("Your request was unable to be completed. Please press ? for help")
 			}
 		}
 	}
