@@ -35,9 +35,12 @@ public class Agendoo{
 			}else if(command[0].equals("list")){
 				String[] list=tasks.listTasks();
 				System.out.println("");
+				System.out.println("~====================~");
 				for(int i=0; i<list.length; i++){
-					System.out.println((i+1)+" : "+list[i]);
+					System.out.println((i+1)+" - "+list[i]);
+					
 				}
+				System.out.println("~====================~");
 				System.out.println("");
 			
 		//If the user typed 'add', then some text, add the text as
