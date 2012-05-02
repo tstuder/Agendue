@@ -18,7 +18,7 @@ public class Agendoo{
 			
 		//The user typed something, let's figure out what to do
 		//If there was an error, or if they typed 'exit', let's exit
-			if(command[0].equals("exit") || command[0].equals("quit")){
+			if(command[0].equals("exit") || command[0].equals("quit") || command==null){
 				System.out.println("Goodbye!");
 				return;
 			
@@ -30,9 +30,7 @@ public class Agendoo{
 				System.out.println(" del <task #>     : Deletes a task");
 				System.out.println(" quit             : Exits out of program");
 				System.out.println("");
-			// Check for error, if true, return error message
-			}else if(command==null){
-				System.out.println("Your request was unable to be completed. Please press ? for help");
+
 		//If the user typed 'list', then print a list of tasks
 			}else if(command[0].equals("list")){
 				String[] list=tasks.listTasks();
@@ -46,6 +44,7 @@ public class Agendoo{
 		//  a new task
 			}else if(command[0].equals("add")){
 				tasks.addTask(command[1]);
+				System.out.println("Your task has been added");
 			
 		//If the user typed 'del', then a number, try to delete
 		//  the task with that number
@@ -53,10 +52,12 @@ public class Agendoo{
 				try{
 					int id=Integer.parseInt(command[1]);
 					tasks.delTask(id-1);
+					System.out.println("The task has been sucessfully deleted");
 				}catch(Exception e){
 					System.out.println("No such task");
 				}
 			}else{
+			// Check for error, if true, return error message
 				System.out.println("Your request was unable to be completed. Please press ? for help");
 			}
 		}
