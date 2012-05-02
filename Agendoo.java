@@ -35,10 +35,10 @@ public class Agendoo{
 				System.out.println("Your request was unable to be completed. Please press ? for help");
 		//If the user typed 'list', then print a list of tasks
 			}else if(command[0].equals("list")){
-				String[] l=tasks.listTasks();
+				String[] list=tasks.listTasks();
 				System.out.println("");
-				for(int i=0; i<l.length; i++){
-					System.out.println(i+" : "+l[i]);
+				for(int i=0; i<list.length; i++){
+					System.out.println((i+1)+" : "+list[i]);
 				}
 				System.out.println("");
 			
@@ -52,7 +52,7 @@ public class Agendoo{
 			}else if(command[0].equals("del")){
 				try{
 					int id=Integer.parseInt(command[1]);
-					tasks.delTask(id);
+					tasks.delTask(id-1);
 				}catch(Exception e){
 					System.out.println("No such task");
 				}
