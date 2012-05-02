@@ -49,6 +49,9 @@ public class Agendoo{
 		//If the user typed 'del', then a number, try to delete
 		//  the task with that number
 			}else if(command[0].equals("del")){
+				//the following try-catch block simply trys something,
+				//and if it fails and creates an error,
+				//the catch will then run
 				try{
 					int id=Integer.parseInt(command[1]);
 					tasks.delTask(id-1);
