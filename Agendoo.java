@@ -32,6 +32,7 @@ public class Agendoo{
 				System.out.println(" ?                : Displays this help text");
 				System.out.println(" add <task name>  : creates a task");
 				System.out.println(" del <task #>     : Deletes a task");
+				System.out.println(" list             : Lists all tasks");
 				System.out.println(" quit             : Exits out of program");
 				System.out.println("");
 
