@@ -28,12 +28,13 @@ public class Agendue{
 				return;
 			
 		//If the user typed '?', then show them a help screen
-			}else if(command[0].equals("?")){
+			}else if(command[0].equals("?") || command[0].equals("help")){
 				System.out.println("The following commands are available:");
 				System.out.println(" ?                : Displays this help text");
 				System.out.println(" add <task name>  : creates a task");
 				System.out.println(" del <task #>     : Deletes a task");
 				System.out.println(" list             : Lists all tasks");
+				System.out.println(" clear            : Deletes all tasks currently loaded");
 				System.out.println(" save <name>      : Saves your current list of tasks under the given name");
 				System.out.println(" load <name>      : Loads previously added tasks under a certain name");
 				System.out.println(" quit             : Exits out of program");
@@ -101,7 +102,9 @@ public class Agendue{
 					}
 				catch(Exception e){
 					System.out.println("The load file does not exist. Please check the name.");}
-				
+			}else if (command[0].equals("clear")){
+				tasks.clearTask();
+				System.out.println("All tasks have been cleared!");
 			}else{
 			// Check for error, if true, return error message
 				System.out.println("Your request was unable to be completed. Please press ? for help");

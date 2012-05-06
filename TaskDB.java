@@ -75,5 +75,12 @@ public class TaskDB{
 			in.close();
 			fileIn.close();	
 	}
+		/**
+	 * Clears all tasks from the database
+	 * Written by Timothy
+	 */
+	public void clearTask(){
+		tasks=new ArrayList<String>();
+	}
 }
 
