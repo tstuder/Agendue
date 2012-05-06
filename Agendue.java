@@ -42,15 +42,19 @@ public class Agendue{
 		//If the user typed 'list', then print a list of tasks
 			}else if(command[0].equals("list")){
 				String[] list=tasks.listTasks();
-				System.out.println("");
-				System.out.println("~====================~");
-				for(int i=0; i<list.length; i++){
-					System.out.println((i+1)+" - "+list[i]);
-					
+				if (list.length > 0){
+					System.out.println("");
+					System.out.println("~====================~");
+					for(int i=0; i<list.length; i++){
+						System.out.println((i+1)+" - "+list[i]);
+					}
+					System.out.println("~====================~");
+					System.out.println("");
+					}
+				else {
+					System.out.println("There are no tasks to list!");
 				}
-				System.out.println("~====================~");
-				System.out.println("");
-			
+					
 		//If the user typed 'add', then some text, add the text as
 		//  a new task
 			}else if(command[0].equals("add")){
@@ -72,13 +76,29 @@ public class Agendue{
 				}
 			
 			}else if(command[0].equals("save")){
-				tasks.save(command[1]);
-				System.out.println("Your tasks have been saved");
-			
+				if(command.length == 1){
+					System.out.println("You need to put a file name at the end of 'save'.");
+				} else {
+					tasks.save(command[1]);
+					System.out.println("Your tasks have been saved");
+				}
 			}else if(command[0].equals("load")){
 				try{
 					tasks.load(command[1]);
-					System.out.println("Your tasks have been loaded");}
+					System.out.println("Your tasks have been loaded");
+					String[] list=tasks.listTasks();
+					if (list.length > 0){
+						System.out.println("");
+						System.out.println("~====================~");
+						for(int i=0; i<list.length; i++){
+							System.out.println((i+1)+" - "+list[i]);
+						}
+						System.out.println("~====================~");
+						System.out.println("");
+					}else {
+						System.out.println("There are no tasks to list!");
+					}
+					}
 				catch(Exception e){
 					System.out.println("The load file does not exist. Please check the name.");}
 				
