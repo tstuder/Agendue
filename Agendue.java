@@ -33,8 +33,9 @@ public class Agendue{
 				System.out.println(" ?                : Displays this help text");
 				System.out.println(" add <task name>  : creates a task");
 				System.out.println(" del <task #>     : Deletes a task");
-				System.out.println(" save             : Saves your current list of tasks");
 				System.out.println(" list             : Lists all tasks");
+				System.out.println(" save <name>      : Saves your current list of tasks under the given name");
+				System.out.println(" load <name>      : Loads previously added tasks under a certain name");
 				System.out.println(" quit             : Exits out of program");
 				System.out.println("");
 
