@@ -71,8 +71,15 @@ public class Agendue{
 				}
 			
 			}else if(command[0].equals("save")){
-				tasks.save();
+				tasks.save(command[1]);
 				System.out.println("Your tasks have been saved");
+			
+			}else if(command[0].equals("load")){
+				try{
+					tasks.load(command[1]);
+					System.out.println("Your tasks have been loaded");}
+				catch(Exception e){
+					System.out.println("The load file does not exist. Please check the name.");}
 				
 			}else{
 			// Check for error, if true, return error message

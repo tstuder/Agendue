@@ -8,7 +8,6 @@ import java.io.*;
 public class TaskDB{
 
 	List<String> tasks;
-	String file="tasks.db";
 
 	/**
 	 * Constructs a TaskDB object, which can be serialized to "tasks.db"
@@ -16,18 +15,7 @@ public class TaskDB{
 	 */
 	@SuppressWarnings("unchecked")
 	public TaskDB(){
-		this.file=file;
-		try
-		{
-			FileInputStream fileIn = new FileInputStream(file);
-			ObjectInputStream in = new ObjectInputStream(fileIn);
-			
-			tasks = (List<String>)in.readObject();
-			in.close();
-			fileIn.close();
-		}catch(Exception e){
-			tasks=new ArrayList<String>();
-		}
+				tasks=new ArrayList<String>();
 	}
 	
 	/**
@@ -61,7 +49,7 @@ public class TaskDB{
 	 * Saves (serializes) the task DB
 	 * Written by Matt
 	 */
-	public void save(){
+	public void save(String file){
 		try{
 			FileOutputStream fileOut = new FileOutputStream(file);
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -71,6 +59,21 @@ public class TaskDB{
 		}catch(Exception e){
           e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Loads previously added tasks to the database
+	 * Written by Timothy
+	 * @param file the file that we want to load
+	 */
+	@SuppressWarnings("unchecked")
+	public void load(String file) throws Exception{
+			FileInputStream fileIn = new FileInputStream(file);
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			
+			tasks = (List<String>)in.readObject();
+			in.close();
+			fileIn.close();	
 	}
 }
 
