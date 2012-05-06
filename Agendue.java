@@ -33,6 +33,7 @@ public class Agendue{
 				System.out.println(" ?                : Displays this help text");
 				System.out.println(" add <task name>  : creates a task");
 				System.out.println(" del <task #>     : Deletes a task");
+				System.out.println(" save             : Saves your current list of tasks");
 				System.out.println(" list             : Lists all tasks");
 				System.out.println(" quit             : Exits out of program");
 				System.out.println("");
@@ -68,6 +69,11 @@ public class Agendue{
 				}catch(Exception e){
 					System.out.println("No such task");
 				}
+			
+			}else if(command[0].equals("save")){
+				tasks.save();
+				System.out.println("Your tasks have been saved");
+				
 			}else{
 			// Check for error, if true, return error message
 				System.out.println("Your request was unable to be completed. Please press ? for help");
