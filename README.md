@@ -1,12 +1,17 @@
-Building Agendo Source Code
+Getting the Agendue source code
 ===========================
 
-	javac Agendo.java
+	git clone git@github.com:forsetti/Agendue.git
+
+Building Agendue Source Code
+===========================
+
+	javac Agendue.java
 	
-Running Agendo
+Running Agendue
 ===========================
 
-	java Agendo
+	java Agendue
 
 Using
 ===========================
