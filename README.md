@@ -1,7 +1,14 @@
+Running Agendue on Windows
+===========================
+Type https://github.com/downloads/tstuder/Agendue/Agendue.zip in your browser's address bar.
+Unzip file you just downloaded
+Run Agendue.bat for Windows users
+Run Agendue.jar for Linux or Mac users
+
 Getting the Agendue source code
 ===========================
 
-	git clone git@github.com:forsetti/Agendue.git
+	git clone git@github.com:tstuder/Agendue.git
 
 Building Agendue Source Code
 ===========================
@@ -13,6 +20,11 @@ Running Agendue
 
 	java Agendue
 
+Building the Agendue package
+============================
+	
+	jar cfe Agendue.jar Agendue Agendue.class TaskDB.class
+	
 Using
 ===========================
 	* At the prompt, type ? followed by the <ENTER> key to display
