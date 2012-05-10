@@ -35,6 +35,10 @@ public class Agendue{
 				System.out.println(" del <task #>     : Deletes a task");
 				System.out.println(" list             : Lists all tasks");
 				System.out.println(" clear            : Deletes all tasks currently loaded");
+				System.out.println(" inc <task #>     : Increases the priority of the task");
+				System.out.println("                    Note that this decreases the actual number");
+				System.out.println(" dec <task #>     : Decreases the priority of the task");
+				System.out.println("                    Note that this increases the actual number");
 				System.out.println(" save <name>      : Saves your current list of tasks under the given name");
 				System.out.println(" load <name>      : Loads previously added tasks under a certain name");
 				System.out.println(" quit             : Exits out of program");
@@ -47,7 +51,7 @@ public class Agendue{
 					System.out.println("");
 					System.out.println("~====================~");
 					for(int i=0; i<list.length; i++){
-						System.out.println((i+1)+" - "+list[i]);
+						System.out.println((i+1)+" | "+list[i]);
 					}
 					System.out.println("~====================~");
 					System.out.println("");
@@ -105,6 +109,32 @@ public class Agendue{
 			}else if (command[0].equals("clear")){
 				tasks.clearTask();
 				System.out.println("All tasks have been cleared!");
+			}else if (command[0].equals("inc")){
+					try{
+					int id=Integer.parseInt(command[1]);
+						if (id==1){
+							System.out.println("Cannot move task. Is the first task.");
+						}
+					else {
+					tasks.incTask(id-1);
+					System.out.println("The task has been sucessfully increased in proirity");
+					}
+				}catch(Exception e){
+					System.out.println("Cannot move task. Make sure it exists.");
+				}
+			}else if (command[0].equals("dec")){
+					try{
+					int id=Integer.parseInt(command[1]);
+						if (tasks.size()==id){
+							System.out.println("Cannot move task. Task is already last.");
+						}
+					else {
+					tasks.decTask(id-1);
+					System.out.println("The task has been sucessfully decreased in priority");
+					}
+					}catch(Exception e){
+					System.out.println("Cannot move task. Make sure it exists.");
+				}
 			}else{
 			// Check for error, if true, return error message
 				System.out.println("Your request was unable to be completed. Please press ? for help");

@@ -82,5 +82,23 @@ public class TaskDB{
 	public void clearTask(){
 		tasks=new ArrayList<String>();
 	}
+	
+	public void incTask(int id){
+		String copy;
+		copy=tasks.get(id);
+		tasks.remove(id);
+		tasks.add (id-1, copy);
+	}
+	
+	public void decTask(int id){
+		String copy;
+		copy=tasks.get(id);
+		tasks.remove(id);
+		tasks.add (id+1, copy);
+	}
+	
+	public int size(){
+		return tasks.size ();
+	}
 }
 
